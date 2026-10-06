@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Relay - MacBook Air Login</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="macbook-frame">
+    <section class="left-section">
+      <img src="blood-relay-left-panel.png" alt="Blood Relay">
+    </section>
+
+    <section class="right-section">
+      <div class="signup">
+        <span>Don't have an account?</span>
+        <a href="#signup">Sign Up →</a>
+      </div>
+
+      <div class="login-content">
+        <h1>Welcome Back</h1>
+        <p class="subtitle">
+          Login to your Bloody relay account<br>
+          to continue saving lives.
+        </p>
+
+        <form action="#" method="post">
+          <div class="phone-box">
+            <span class="phone-icon">▯</span>
+
+            <select class="country-code" name="country" aria-label="Country code">
+              <option value="+91">+91</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+              <option value="+61">+61</option>
+            </select>
+
+            <span class="divider"></span>
+
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              inputmode="numeric"
+              autocomplete="tel"
+              required
+              title="Please enter a valid 10-digit phone number">
+          </div>
+
+          <label class="remember">
+            <input type="checkbox" name="remember" checked>
+            <span>Remember me</span>
+          </label>
+
+          <a href="dashboard (1).html"><button class="login-button" type="submit">
+            Log In →</a>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
