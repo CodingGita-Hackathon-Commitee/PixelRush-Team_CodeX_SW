@@ -1,0 +1,740 @@
+:root {
+      --red: #e92328;
+      --red-dark: #d91e26;
+      --ink: #18243a;
+      --muted: #8290a5;
+      --line: #e5ebf3;
+      --bg: #f5f8fc;
+      --pale: #fff1f1;
+      --green: #13ae7c;
+      --shadow: 0 5px 14px rgba(26, 45, 75, .045)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, -apple-system, "Segoe UI", Arial, sans-serif;
+      font-size: 12px
+    }
+
+    .topbar {
+      height: 69px;
+      background: #fff;
+      border-bottom: 1px solid #e8edf4;
+      display: flex;
+      align-items: center;
+      padding: 0 31px;
+      gap: 15px
+    }
+
+    .back {
+      width: 37px;
+      height: 37px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+      color: #31415b;
+      font-size: 24px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      cursor: pointer
+    }
+
+    .heading {
+      min-width: 0
+    }
+
+    .titleline {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .titleline h1 {
+      font-size: 20px;
+      letter-spacing: -.5px;
+      margin: 0;
+      font-weight: 750
+    }
+
+    .badge {
+      background: #ffe6e6;
+      color: var(--red);
+      font-size: 9px;
+      font-weight: 700;
+      padding: 5px 9px;
+      border-radius: 99px
+    }
+
+    .heading p {
+      font-size: 10px;
+      color: var(--muted);
+      margin: 3px 0 0
+    }
+
+    .top-spacer {
+      flex: 1
+    }
+
+    .live {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      background: #f9fbfd;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 9px;
+      color: #516078;
+      white-space: nowrap
+    }
+
+    .dot {
+      height: 7px;
+      width: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px #13ae7c18
+    }
+
+    .step {
+      height: 34px;
+      border-left: 1px solid var(--line);
+      padding-left: 14px;
+      margin-left: 1px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      white-space: nowrap
+    }
+
+    .step strong {
+      font-size: 9px
+    }
+
+    .step span {
+      font-size: 8px;
+      color: #97a2b3;
+      margin-top: 3px
+    }
+
+    .layout {
+      width: min(100%, 1360px);
+      margin: 49px auto;
+      padding: 0 25px 35px;
+      display: grid;
+      grid-template-columns: minmax(280px, .82fr) minmax(400px, 1.18fr);
+      gap: 24px;
+      align-items: start
+    }
+
+    .column {
+      display: grid;
+      gap: 16px
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 18px 19px;
+      box-shadow: var(--shadow)
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 15px
+    }
+
+    .iconbox {
+      width: 24px;
+      height: 24px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      background: var(--pale);
+      border-radius: 7px
+    }
+
+    .iconbox svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .iconbox .solid {
+      fill: currentColor;
+      stroke: none
+    }
+
+    .card-head h2 {
+      font-size: 12px;
+      margin: 1px 0 3px;
+      font-weight: 700;
+      letter-spacing: -.12px
+    }
+
+    .card-head p {
+      margin: 0;
+      color: #98a4b6;
+      font-size: 9px
+    }
+
+    .blood-card {
+      min-height: 207px
+    }
+
+    .blood-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px 12px
+    }
+
+    .blood-option {
+      height: 37px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+      color: #324159;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .15s
+    }
+
+    .blood-option:hover {
+      border-color: #f29a9d
+    }
+
+    .blood-option.selected {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+      box-shadow: 0 3px 8px #e9232825
+    }
+
+    .select-wrap {
+      position: relative
+    }
+
+    .select-wrap:after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-right: 1.5px solid #92a0b4;
+      border-bottom: 1.5px solid #92a0b4;
+      right: 15px;
+      top: calc(50% - 5px);
+      transform: rotate(45deg);
+      pointer-events: none
+    }
+
+    .select {
+      appearance: none;
+      width: 100%;
+      height: 41px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fbfcfe;
+      padding: 0 38px 0 13px;
+      color: #24334a;
+      font-size: 10px;
+      font-weight: 650;
+      outline: 0
+    }
+
+    .select:focus,
+    .field:focus {
+      border-color: #f28b8e;
+      box-shadow: 0 0 0 3px #e9232810
+    }
+
+    .select option {
+      color: var(--ink)
+    }
+
+    .hospital-select {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .hospital-select .mini {
+      width: 17px;
+      height: 17px;
+      border-radius: 4px;
+      display: grid;
+      place-items: center;
+      background: #23334b;
+      color: white;
+      font-size: 11px
+    }
+
+    .hospital-select .select {
+      padding-left: 10px
+    }
+
+    .time-card {
+      min-height: 109px
+    }
+
+    .time-card .card-head {
+      margin-bottom: 10px
+    }
+
+    .time-card .iconbox {
+      border-radius: 50%;
+      background: #fff
+    }
+
+    .need-card {
+      min-height: 99px
+    }
+
+    .need-card .card-head {
+      margin-bottom: 15px
+    }
+
+    .segmented {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px
+    }
+
+    .segment {
+      height: 34px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fff;
+      color: #59677d;
+      font-weight: 650;
+      font-size: 9px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px
+    }
+
+    .segment svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+      stroke: none
+    }
+
+    .segment.active {
+      border: 1.5px solid #ff4d51;
+      background: #fffafa;
+      color: var(--red);
+      box-shadow: 0 0 0 1px #ff4d5110
+    }
+
+    .location-card {
+      min-height: 115px
+    }
+
+    .location-card .card-head {
+      margin-bottom: 14px
+    }
+
+    .location-info {
+      height: 50px;
+      border: 1px solid var(--line);
+      background: #fbfcfe;
+      border-radius: 10px;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px
+    }
+
+    .pin {
+      height: 24px;
+      width: 24px;
+      border-radius: 7px;
+      background: #edf2f8;
+      color: #718198;
+      display: grid;
+      place-items: center;
+      flex: none
+    }
+
+    .pin svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor
+    }
+
+    .place {
+      min-width: 0;
+      flex: 1
+    }
+
+    .place strong {
+      font-size: 10px;
+      display: block
+    }
+
+    .place small {
+      font-size: 8px;
+      color: #92a0b1;
+      display: block;
+      margin-top: 3px
+    }
+
+    .use-location {
+      height: 25px;
+      padding: 0 9px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--red);
+      font-size: 8px;
+      font-weight: 650;
+      white-space: nowrap;
+      cursor: pointer
+    }
+
+    .use-location:hover {
+      background: #fff5f5
+    }
+
+    .bottom-row {
+      display: grid;
+      grid-template-columns: minmax(210px, 1fr) 1fr;
+      gap: 16px;
+      align-items: end
+    }
+
+    .contact-card {
+      min-height: 79px;
+      padding: 13px 15px
+    }
+
+    .contact-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 9px
+    }
+
+    .contact-label svg {
+      width: 12px;
+      height: 12px;
+      color: var(--red);
+      fill: currentColor
+    }
+
+    .contact-options {
+      display: flex;
+      gap: 8px
+    }
+
+    .contact-option {
+      height: 30px;
+      flex: 1;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fff;
+      color: #5c6879;
+      font-size: 8px;
+      font-weight: 650;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px
+    }
+
+    .contact-option.active {
+      border: 1.5px solid #ff4d51;
+      color: var(--red)
+    }
+
+    .contact-option svg {
+      width: 11px;
+      height: 11px
+    }
+
+    .contact-option.whatsapp svg {
+      color: #15af7e;
+      fill: currentColor
+    }
+
+    .send {
+      height: 56px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--red);
+      color: #fff;
+      box-shadow: 0 5px 9px #bb162844;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: .2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      cursor: pointer;
+      transition: background .15s, transform .15s, box-shadow .15s
+    }
+
+    .send:hover {
+      background: var(--red-dark);
+      box-shadow: 0 7px 13px #bb16284a;
+      transform: translateY(-1px)
+    }
+
+    .send svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor
+    }
+
+    .units-card {
+      min-height: 94px
+    }
+
+    .units-card .card-head {
+      margin-bottom: 12px
+    }
+
+    .counter {
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fbfcfe;
+      display: grid;
+      grid-template-columns: 32px 1fr 32px;
+      align-items: center;
+      text-align: center
+    }
+
+    .counter button {
+      height: 24px;
+      width: 24px;
+      justify-self: center;
+      border: 0;
+      border-radius: 7px;
+      background: #fff0f0;
+      color: var(--red);
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer
+    }
+
+    .counter output {
+      font-size: 10px;
+      font-weight: 700
+    }
+
+    .counter span {
+      font-weight: 500;
+      color: #8190a5
+    }
+
+    .notice {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translate(-50%, 10px);
+      padding: 12px 16px;
+      background: #172338;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 22px #17233833;
+      font-size: 11px;
+      opacity: 0;
+      transition: .2s;
+      pointer-events: none
+    }
+
+    .notice.show {
+      opacity: 1;
+      transform: translate(-50%, 0)
+    }
+
+    @media(min-width:1100px) {
+      .layout {
+        margin-top: 49px
+      }
+
+      .column.left .units-card {
+        margin-top: 25px
+      }
+    }
+
+    @media(max-width:760px) {
+      .topbar {
+        padding: 0 16px;
+        height: 64px;
+        gap: 10px
+      }
+
+      .titleline h1 {
+        font-size: 18px
+      }
+
+      .live {
+        display: none
+      }
+
+      .step {
+        margin-left: auto
+      }
+
+      .layout {
+        margin: 20px auto;
+        padding: 0 14px 24px;
+        grid-template-columns: 1fr;
+        gap: 14px
+      }
+
+      .column {
+        gap: 14px
+      }
+
+      .column.left {
+        display: contents
+      }
+
+      .blood-card {
+        grid-row: 1
+      }
+
+      .column.right {
+        display: contents
+      }
+
+      .hospital-card {
+        grid-row: 2
+      }
+
+      .need-card {
+        grid-row: 3
+      }
+
+      .time-card {
+        grid-row: 4
+      }
+
+      .location-card {
+        grid-row: 5
+      }
+
+      .units-card {
+        grid-row: 6;
+        margin: 0 !important
+      }
+
+      .bottom-row {
+        grid-row: 7
+      }
+
+      .blood-card {
+        min-height: unset
+      }
+
+      .card {
+        padding: 16px
+      }
+
+      .blood-grid {
+        gap: 8px
+      }
+
+      .step {
+        padding-left: 9px
+      }
+
+      .step strong {
+        font-size: 8px
+      }
+
+      .step span {
+        font-size: 7px
+      }
+    }
+
+    @media(max-width:440px) {
+      .topbar {
+        padding: 0 12px
+      }
+
+      .back {
+        width: 33px;
+        height: 33px
+      }
+
+      .badge {
+        font-size: 8px;
+        padding: 4px 7px
+      }
+
+      .heading p {
+        font-size: 9px
+      }
+
+      .step {
+        display: none
+      }
+
+      .layout {
+        padding: 0 11px 20px;
+        margin-top: 13px
+      }
+
+      .bottom-row {
+        grid-template-columns: 1fr;
+        gap: 10px
+      }
+
+      .send {
+        height: 50px;
+        grid-row: 1
+      }
+
+      .contact-card {
+        grid-row: 2
+      }
+
+      .location-info {
+        gap: 7px;
+        padding: 0 7px
+      }
+
+      .use-location {
+        padding: 0 6px;
+        font-size: 7px
+      }
+
+      .card {
+        border-radius: 13px
+      }
+
+      .segmented {
+        gap: 6px
+      }
+
+      .segment {
+        font-size: 8px
+      }
+    }
+  
