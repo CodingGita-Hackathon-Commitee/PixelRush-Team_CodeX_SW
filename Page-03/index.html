@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Need Blood — Blood Relay</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <button class="back" >‹</button>
+    <div class="heading">
+      <div class="titleline">
+        <h1>Need Blood</h1><span class="badge">Urgent Request</span>
+      </div>
+      <p>Create a high-priority broadcast to compatible donors nearby</p>
+    </div>
+    <div class="top-spacer"></div>
+    <div class="live"><i class="dot"></i> Blood Relay Network • Live Dispatch</div>
+    <div class="step"><strong>App Flow Preview</strong><span>Step 2 of 3 · Recipient Details</span></div>
+  </header>
+
+  <main class="layout">
+    <div class="column left">
+      <section class="card blood-card">
+        <div class="card-head">
+          <span class="iconbox"><svg viewBox="0 0 24 24">
+              <path class="solid" d="M12 2.5S5.5 10 5.5 14.3a6.5 6.5 0 0 0 13 0C18.5 10 12 2.5 12 2.5Z" />
+            </svg></span>
+          <div>
+            <h2>Blood group needed</h2>
+            <p>Select the blood group you need</p>
+          </div>
+        </div>
+        <div class="blood-grid"  >
+          <button class="blood-option">A+</button><button class="blood-option">A−</button>
+          <button class="blood-option">B+</button><button class="blood-option selected">B−</button>
+          <button class="blood-option">AB+</button><button class="blood-option">AB−</button>
+          <button class="blood-option">O+</button><button class="blood-option">O−</button>
+        </div>
+      </section>
+
+      <section class="card time-card">
+        <div class="card-head">
+          <span class="iconbox"><svg viewBox="0 0 24 24">
+             
+              <path d="M12 7v5l3 2" />
+            </svg></span>
+          <div>
+            <h2>Needed within</h2>
+            <p>How soon do you need the blood?</p>
+          </div>
+        </div>
+        <div class="select-wrap">
+          <select class="select" >
+            <option>2 HOURS</option>
+            <option>4 HOURS</option>
+            <option>8 HOURS</option>
+            <option>24 HOURS</option>
+            <option>As soon as possible</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="card units-card">
+        <div class="card-head">
+          <span class="iconbox"><svg viewBox="0 0 24 24">
+              <path class="solid" d="M12 2.5S5.5 10 5.5 14.3a6.5 6.5 0 0 0 13 0C18.5 10 12 2.5 12 2.5Z" />
+            </svg></span>
+          <div>
+            <h2>Blood units needed</h2>
+            <p>How many units of blood are required?</p>
+          </div>
+        </div>
+        <div class="counter">
+          <button aria-label="Decrease units" onclick="changeUnits(-1)">−</button>
+          <output id="units">2 <span>Units</span></output>
+          <button aria-label="Increase units">+</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="column right">
+      <section class="card hospital-card">
+        <div class="card-head">
+          <span class="iconbox"><svg viewBox="0 0 24 24">
+              <path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M3 21h18M9 7h6M9 11h6M10 21v-5h4v5" />
+            </svg></span>
+          <div>
+            <h2>Hospital</h2>
+            <p>Select the hospital / medical center</p>
+          </div>
+        </div>
+        <div class="hospital-select">
+          <span class="mini">✚</span>
+          <div class="select-wrap" style="flex:1">
+            <select class="select" >
+              <option>CityCare Hospital</option>
+              <option>Sunrise Medical Center</option>
+              <option>Government Civil Hospital</option>
+              <option>Choose another hospital…</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="card need-card">
+        <div class="card-head">
+          <span class="iconbox"><svg viewBox="0 0 24 24">
+              <circle cx="9" cy="8" r="3" />
+              <path
+                d="M3.5 19v-1.5A4.5 4.5 0 0 1 8 13h2a4 4 0 0 1 3 1.2M16 7a2.5 2.5 0 1 1 0 5M15 15h2a3.5 3.5 0 0 1 3.5 3.5V20" />
+            </svg></span>
+          <div>
+            <h2>Blood needed for</h2>
+            <p>Who needs the blood?</p>
+          </div>
+        </div>
+        <div class="segmented" role="group">
+          <button class="segment active"><svg viewBox="0 0 24 24">
+              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a7 7 0 0 1 14 0z" />
+            </svg>Myself</button>
+          <button class="segment"><svg viewBox="0 0 24 24">
+              <path
+                d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM1 20a7 7 0 0 1 14 0Zm12 0a6 6 0 0 1 10 0z" />
+            </svg>Family member</button>
+          <button class="segment"><svg viewBox="0 0 24 24">
+              <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a7 7 0 0 1 14 0z" />
+            </svg>Friend</button>
+        </div>
+      </section>
+
+      <section class="card location-card">
+        <div class="card-head">
+          <span class="iconbox"><svg viewBox="0 0 24 24">
+              <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+              <circle cx="12" cy="10" r="2.2" />
+            </svg></span>
+          <div>
+            <h2>Location</h2>
+            <p>Request will be sent to donors near this location</p>
+          </div>
+        </div>
+        <div class="location-info">
+          <span class="pin"><svg viewBox="0 0 24 24">
+              <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+            </svg></span>
+          <div class="place"><strong>CityCare Hospital</strong><small>Ahmedabad, Gujarat, India</small></div>
+          <button class="use-location" >⌖ &nbsp;Use current
+            location</button>
+        </div>
+      </section>
+
+      <div class="bottom-row">
+        <section class="card contact-card">
+          <div class="contact-label">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.6 2.5h3l1.5 4.3-2 1.5a15 15 0 0 0 6.6 6.6l1.5-2 4.3 1.5v3c0 1.3-1.1 2.4-2.4 2.3A18.7 18.7 0 0 1 4.3 4.9C4.2 3.6 5.3 2.5 6.6 2.5Z" />
+            </svg>
+            Preferred contact
+          </div>
+          <div class="contact-options">
+            <button class="contact-option active"><svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6.6 2.5h3l1.5 4.3-2 1.5a15 15 0 0 0 6.6 6.6l1.5-2 4.3 1.5v3c0 1.3-1.1 2.4-2.4 2.3A18.7 18.7 0 0 1 4.3 4.9C4.2 3.6 5.3 2.5 6.6 2.5Z" />
+              </svg>Call</button>
+            <button class="contact-option whatsapp"><svg viewBox="0 0 24 24">
+                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" />
+                <path d="M9 8.5c.5 2.5 2 4 4.5 4.5" fill="none" stroke="white" stroke-width="1.6" />
+              </svg>WhatsApp</button>
+          </div>
+        </section>
+        <button class="send">
+          <svg viewBox="0 0 24 24">
+            <path d="m2 3 20 9-20 9 3-8 11-1-11-1-3-8Z" />
+          </svg>
+          SEND REQUEST
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <div class="notice" id="notice" role="status"></div>
+
+</body>
+
+</html>
