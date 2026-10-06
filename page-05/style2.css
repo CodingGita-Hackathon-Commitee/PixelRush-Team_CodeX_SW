@@ -1,0 +1,461 @@
+:root {
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Brand Colors */
+  --primary-red: #e11d48;
+  --primary-red-hover: #cc123c;
+  --primary-red-active: #b91036;
+  --primary-red-glow: rgba(225, 29, 72, 0.25);
+
+  /* Status & Accents */
+  --badge-green-bg: #ecfdf5;
+  --badge-green-text: #059669;
+  --badge-green-dot: #10b981;
+
+  --drop-badge-bg: #fff1f2;
+  --drop-badge-ring: #ffe4e6;
+  
+  /* Neutrals */
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-light: #edf2f7;
+  --border-subtle: #f1f5f9;
+  
+  --text-main: #0f172a;
+  --text-body: #64748b;
+  --text-muted: #94a3b8;
+  --text-dark: #1e293b;
+
+  /* Shadows */
+  --shadow-nav: 0 1px 3px 0 rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 2px 12px -2px rgba(15, 23, 42, 0.03), 0 1px 4px -1px rgba(15, 23, 42, 0.02);
+  --shadow-card-hover: 0 8px 24px -4px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-btn: 0 4px 14px rgba(225, 29, 72, 0.3);
+
+  /* Border Radii */
+  --radius-card: 20px;
+  --radius-pill: 9999px;
+  --radius-sm: 10px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Top Sticky Navigation Bar */
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-nav);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #f1f5f9;
+  color: var(--primary-red);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-icon-drop {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+/* Main Content Layout */
+.main-wrapper {
+  width: 100%;
+  max-width: 900px;
+  padding: 28px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Top Summary Request Card */
+.request-summary-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: box-shadow 0.25s ease;
+}
+
+.request-summary-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Big Round Drop Badge */
+.summary-drop-badge {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff1f2 0%, #fee2e2 100%);
+  border: 4px solid #fff5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.12);
+  flex-shrink: 0;
+}
+
+.summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.request-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.request-details {
+  font-size: 14.5px;
+  color: var(--text-body);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bullet-sep {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.request-id {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Section Header */
+.section-header {
+  margin-top: 4px;
+}
+
+.section-title {
+  font-size: 18.5px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.015em;
+}
+
+/* Donor Cards List */
+.donors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Individual Donor Card */
+.donor-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.donor-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: #e2e8f0;
+}
+
+/* Left Group: Avatar + Details */
+.donor-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Circular Avatar */
+.donor-avatar-frame {
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.donor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Donor Details */
+.donor-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.donor-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.donor-subinfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.blood-type-label {
+  font-weight: 800;
+  color: var(--primary-red);
+}
+
+.donor-role {
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+.donor-distance-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--text-body);
+}
+
+.distance-icon {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+/* Status Pill */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--badge-green-bg);
+  color: var(--badge-green-text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3.5px 11px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+  margin-top: 2px;
+}
+
+.status-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background-color: var(--badge-green-dot);
+}
+
+/* Right Side: View Profile Button */
+.btn-view-profile {
+  background-color: var(--primary-red);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-shadow: var(--shadow-btn);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.btn-view-profile:hover {
+  background-color: var(--primary-red-hover);
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.4);
+  color: #ffffff;
+}
+
+.btn-view-profile:active {
+  transform: translateY(1px);
+  background-color: var(--primary-red-active);
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 14px 20px;
+  }
+
+  .main-wrapper {
+    padding: 20px 16px 40px;
+    gap: 20px;
+  }
+
+  .request-summary-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .summary-drop-badge {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .request-title {
+    font-size: 19px;
+  }
+
+  .donor-card {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .donor-avatar-frame {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+  }
+
+  .btn-view-profile {
+    padding: 9px 18px;
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 540px) {
+  .main-wrapper {
+    padding: 16px 12px 36px;
+  }
+
+  .request-summary-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .summary-drop-badge {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+  }
+
+  .request-title {
+    font-size: 17px;
+  }
+
+  .request-details {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 16.5px;
+  }
+
+  .donor-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    border-radius: 16px;
+    gap: 14px;
+  }
+
+  .donor-left {
+    gap: 14px;
+  }
+
+  .donor-name {
+    font-size: 16px;
+  }
+
+  .btn-view-profile {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+  }
+}
