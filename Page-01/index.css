@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+/* MacBook Air 13.6-inch design frame: 1280 x 832 CSS pixels.
+   Retina equivalent: 2560 x 1664 pixels. */
+.macbook-frame {
+  width: 1280px;
+  height: 832px;
+  display: grid;
+  grid-template-columns: 57.1% 42.9%;
+  border: 3px solid #f1ca00;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* LEFT PANEL */
+.left-section {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #720008;
+}
+
+.left-section img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: left center;
+}
+
+/* RIGHT PANEL */
+.right-section {
+  width: 100%;
+  height: 100%;
+  padding: 20px 38px 35px;
+  background: #ffffff;
+}
+
+.signup {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+  color: #9ca3b2;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #ed1b3b;
+  text-decoration: none;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+.login-content {
+  width: 100%;
+  max-width: 440px;
+  margin: 112px auto 0;
+}
+
+.login-content h1 {
+  color: #050505;
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.subtitle {
+  margin-top: 18px;
+  color: #9ca3b2;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* PHONE INPUT */
+.phone-box {
+  width: 100%;
+  height: 43px;
+  margin-top: 48px;
+  border: 1px solid #d7dce4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: #ffffff;
+}
+
+.phone-box:focus-within {
+  border-color: #ed1b3b;
+  box-shadow: 0 0 0 3px rgba(237, 27, 59, 0.08);
+}
+
+.phone-icon {
+  width: 22px;
+  text-align: center;
+  color: #647084;
+  font-size: 17px;
+}
+
+.country-code {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #273244;
+  font-size: 11px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.divider {
+  width: 1px;
+  height: 17px;
+  margin: 0 9px;
+  background: #e2e5ea;
+}
+
+.phone-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  color: #68748a;
+  font-size: 11px;
+  background: transparent;
+}
+
+.phone-box input::placeholder {
+  color: #8d98aa;
+}
+
+/* REMEMBER ME */
+.remember {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #4b5565;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.remember input {
+  width: 14px;
+  height: 14px;
+  accent-color: #ed1b3b;
+  cursor: pointer;
+}
+
+/* LOGIN BUTTON */
+.login-button {
+  width: 100%;
+  height: 45px;
+  margin-top: 26px;
+  border: none;
+  border-radius: 9px;
+  background: #ed1b3b;
+  color: #ffffff;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(237, 27, 59, 0.16);
+  transition: 0.2s ease;
+}
+
+.login-button:hover {
+  background: #d91131;
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.button-arrow {
+  font-size: 17px;
+  margin-left: 7px;
+}
+
+/* SCALE THE 1280 x 832 FRAME DOWN ON SMALLER SCREENS */
+@media (max-width: 1285px) {
+  .macbook-frame {
+    width: 100vw;
+    height: 65vw;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .macbook-frame {
+    height: auto;
+    min-height: 100vh;
+    grid-template-columns: 50% 50%;
+  }
+
+  .right-section {
+    padding: 18px 28px 35px;
+  }
+
+  .login-content {
+    margin-top: 90px;
+  }
+
+  .login-content h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 650px) {
+  .macbook-frame {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    border-width: 2px;
+  }
+
+  .left-section {
+    height: 250px;
+  }
+
+  .left-section img {
+    object-position: left top;
+  }
+
+  .right-section {
+    height: auto;
+    min-height: calc(100vh - 250px);
+    padding: 18px 22px 35px;
+  }
+
+  .signup {
+    font-size: 12px;
+  }
+
+  .login-content {
+    margin-top: 55px;
+    max-width: none;
+  }
+
+  .login-content h1 {
+    font-size: 34px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .phone-box {
+    margin-top: 35px;
+  }
+}
