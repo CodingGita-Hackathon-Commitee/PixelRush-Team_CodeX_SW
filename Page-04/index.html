@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Sent - Blood Dispatch</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans for exact typography match -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient background glow -->
+  <div class="page-bg-gradient" aria-hidden="true"></div>
+
+  <!-- Top Navigation / Back Action (Aligned to top-left of viewport) -->
+  <nav class="top-nav">
+    <a href="#" class="btn-back" aria-label="Go back" title="Go back">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- Main Viewport Container -->
+  <main class="app-viewport">
+
+    <!-- Hero Confirmation Section -->
+    <section class="hero-section">
+      <!-- Droplet Graphic with Radiating Sunburst / Glow -->
+      <div class="droplet-illustration-wrapper">
+        <svg class="droplet-svg-container" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Radial Aura Gradient -->
+            <radialGradient id="heroAura" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop offset="0%" stop-color="#ef4444" stop-opacity="0.16" />
+              <stop offset="40%" stop-color="#f87171" stop-opacity="0.08" />
+              <stop offset="75%" stop-color="#fee2e2" stop-opacity="0.02" />
+              <stop offset="100%" stop-color="#fee2e2" stop-opacity="0" />
+            </radialGradient>
+            
+            <!-- Droplet Crimson Gradient -->
+            <linearGradient id="dropletGradient" x1="80" y1="36" x2="80" y2="116" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f43f5e" />
+              <stop offset="25%" stop-color="#e11d48" />
+              <stop offset="100%" stop-color="#be123c" />
+            </linearGradient>
+
+            <filter id="softShadow" x="40" y="32" width="80" height="92" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#e11d48" flood-opacity="0.3" />
+            </filter>
+          </defs>
+
+          <!-- Ambient Radial Glow Circle -->
+          <circle cx="80" cy="78" r="64" fill="url(#heroAura)" />
+
+          <!-- Radiating Dashes / Tick Marks around Droplet (14 dashes, open at top peak) -->
+          <g class="radiating-rays" stroke="#fb7185" stroke-width="2.2" stroke-linecap="round" opacity="0.85">
+            <!-- Right side radiating dashes -->
+            <line x1="94.5" y1="21.5" x2="98.5" y2="29.5" />
+            <line x1="117.5" y1="36.5" x2="112.5" y2="43.5" />
+            <line x1="133.5" y1="57.5" x2="125.5" y2="61.5" />
+            <line x1="139.0" y1="81.0" x2="129.5" y2="81.0" />
+            <line x1="133.5" y1="104.5" x2="125.5" y2="100.5" />
+            <line x1="117.5" y1="125.5" x2="112.5" y2="118.5" />
+            <line x1="94.5" y1="140.5" x2="98.5" y2="132.5" />
+
+            <!-- Left side radiating dashes -->
+            <line x1="65.5" y1="21.5" x2="61.5" y2="29.5" />
+            <line x1="42.5" y1="36.5" x2="47.5" y2="43.5" />
+            <line x1="26.5" y1="57.5" x2="34.5" y2="61.5" />
+            <line x1="21.0" y1="81.0" x2="30.5" y2="81.0" />
+            <line x1="26.5" y1="104.5" x2="34.5" y2="100.5" />
+            <line x1="42.5" y1="125.5" x2="47.5" y2="118.5" />
+            <line x1="65.5" y1="140.5" x2="61.5" y2="132.5" />
+          </g>
+
+          <!-- Central Blood Droplet with Checkmark -->
+          <g class="hero-droplet" filter="url(#softShadow)">
+            <!-- Teardrop Path -->
+            <path d="M80 40C80 40 55 72 55 90C55 103.8 66.2 115 80 115C93.8 115 105 103.8 105 90C105 72 80 40 80 40Z" 
+                  fill="url(#dropletGradient)" />
+            
+            <!-- Checkmark Symbol -->
+            <path d="M72 88.5L78 94.5L90 82" 
+                  stroke="#ffffff" 
+                  stroke-width="3.4" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title">Request Sent!</h1>
+      
+      <!-- Subtitle Description -->
+      <p class="hero-subtitle">
+        We’ve notified nearby donors who match your request within the<br>
+        <span class="highlight">CityCare Hospital</span> 10km emergency radius.
+      </p>
+    </section>
+
+    <!-- Request Specification Card -->
+    <article class="spec-card">
+      <!-- Card Top Metadata Header -->
+      <header class="card-header">
+        <div class="spec-meta">
+          <span class="indicator-dot" aria-hidden="true"></span>
+          <span class="spec-tag-id">REQUEST SPECIFICATION #BR-9402</span>
+        </div>
+        <span class="badge-dispatch">Emergency Dispatch</span>
+      </header>
+
+      <!-- 2x2 Detail Specification Grid -->
+      <div class="spec-grid">
+        
+        <!-- Tile 1: Blood Group -->
+        <div class="spec-tile">
+          <div class="tile-icon-box icon-blood">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          </div>
+          <div class="tile-info">
+            <span class="tile-label">BLOOD GROUP</span>
+            <div class="tile-value-row">
+              <span class="tile-value">B-</span>
+              <span class="badge-rh">Rh-Negative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 2: Urgency -->
+        <div class="spec-tile">
+          <div class="tile-icon-box icon-urgency">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"></circle>
+              <polyline points="12 7 12 12 15.5 10"></polyline>
+            </svg>
+          </div>
+          <div class="tile-info">
+            <span class="tile-label">URGENCY</span>
+            <div class="tile-value-row">
+              <span class="tile-value">Within 2 hours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 3: Hospital -->
+        <div class="spec-tile">
+          <div class="tile-icon-box icon-hospital">
+            <!-- Medical Kit Briefcase with White Cross -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              <rect x="3" y="7" width="18" height="14" rx="3"></rect>
+              <path d="M12 11v6"></path>
+              <path d="M9 14h6"></path>
+            </svg>
+          </div>
+          <div class="tile-info">
+            <span class="tile-label">HOSPITAL</span>
+            <div class="tile-value-row">
+              <span class="tile-value">CityCare Hospital</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tile 4: Units & Priority -->
+        <div class="spec-tile">
+          <div class="tile-icon-box icon-units">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div class="tile-info">
+            <span class="tile-label">UNITS & PRIORITY</span>
+            <div class="tile-value-row">
+              <span class="tile-value">2 Units</span>
+              <span class="priority-tier">
+                <span class="dot-separator">•</span>
+                <span>Tier 1 Urgent</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Scanning Status Bar -->
+      <footer class="scanning-bar">
+        <div class="scanning-left">
+          <div class="pulse-indicator" aria-hidden="true">
+            <span class="pulse-ring"></span>
+            <span class="pulse-dot"></span>
+          </div>
+          <span class="scanning-text">
+            Scanning active verified donors in <strong>5 km radius</strong>
+          </span>
+        </div>
+        <div class="scanning-right">
+          <span class="badge-online">7 online now</span>
+          <span class="eta-text">Estimated arrival: ~18 mins</span>
+        </div>
+      </footer>
+    </article>
+
+    <!-- Primary Action Button -->
+    <a href="#" class="btn-primary" role="button">
+      <span>View Matching Donors</span>
+      <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+  </main>
+
+</body>
+</html>
